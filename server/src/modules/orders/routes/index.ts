@@ -1,0 +1,9 @@
+import { Router } from 'express';
+import orderRouter from './order.route';
+
+const router = Router();
+
+router.use('/', orderRouter);
+
+export default router;
+

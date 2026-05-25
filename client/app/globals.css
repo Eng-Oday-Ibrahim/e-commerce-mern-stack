@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9f6f07a;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-gold: #C9A84C;
+  --color-gold-light: #E0C56F;
+  --color-gold-dark: #8F6E22;
+  
+  --color-off-white: #F9F6F0;
+  --color-deep-black: #1A1A1A;
+  --color-warm-gray: #888888;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-en-body);
+  --font-serif: var(--font-en-title);
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Arabic mode */
+html[lang="ar"] body {
+  font-family: var(--font-ar-body);
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: var(--font-ar-body);
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and old Edge */
+body {
+  -ms-overflow-style: none;
+}

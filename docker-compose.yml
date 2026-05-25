@@ -1,0 +1,69 @@
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: sudanista-client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4000
+      - INTERNAL_API_URL=http://sudanista-server:4000
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: sudanista-server
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+      - redis
+      - rabbitmq
+    environment:
+      - DB_HOST=db
+      - DATABASE_URL=mongodb://root:1234@db:27017/sudanista?authSource=admin
+      - REDIS_URL=redis://redis:6379
+      - RABBITMQ_URL=amqp://admin:admin@rabbitmq:5672
+  db:
+    image: mongo:7
+    container_name: sudanista-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+      MONGO_INITDB_DATABASE: sudanista
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    container_name: sudanista-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: sudanista-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  mongo_data:
+  redis_data:
+  server_data:
+  rabbitmq_data:
+  client_data:

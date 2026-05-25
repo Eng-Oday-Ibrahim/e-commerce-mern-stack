@@ -1,0 +1,544 @@
+{
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "collections": "Collections",
+    "categories": "Categories",
+    "lookbooks": "Lookbooks",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart",
+    "account": "Account",
+    "language": "Language"
+  },
+  "customer": {
+    "account": "Account",
+    "orders": "My orders",
+    "wishlist": "My wishlist"
+  },
+  "common": {
+    "loading": "Loading…",
+    "noImage": "No image",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "clear": "Clear",
+    "continueShopping": "Continue shopping",
+    "notFound": "Not found",
+    "dash": "—"
+  },
+  "toast": {
+    "addedToCart": "Added to cart",
+    "removedFromCart": "Removed from cart",
+    "cartCleared": "Cart cleared",
+    "accountCreated": "Account created",
+    "loggedIn": "Logged in",
+    "loggedOut": "Logged out",
+    "resetCodeSent": "If the email exists, we sent a reset code",
+    "passwordUpdated": "Password updated"
+  },
+  "pages": {
+    "shop": {
+      "title": "Products",
+      "subtitle": "Browse the catalog, filter, and open any item for full details.",
+      "addToCart": "Add to cart",
+      "selectOptions": "Select options",
+      "viewDetails": "View details",
+      "hasOptionsNote": "This item has options.",
+      "filters": "Filters",
+      "priceFrom": "Price from",
+      "priceTo": "Price to",
+      "newArrivals": "New arrivals (30 days)",
+      "sort": "Sort",
+      "sortNewest": "Newest first",
+      "sortPriceAsc": "Price: low to high",
+      "sortPriceDesc": "Price: high to low",
+      "sortNameAsc": "Name: A–Z",
+      "sortNameDesc": "Name: Z–A",
+      "clearFilters": "Clear filters",
+      "search": "Search",
+      "searchPlaceholder": "Search products...",
+      "category": "Category",
+      "collection": "Collection",
+      "all": "All",
+      "minRating": "Min Rating",
+      "any": "Any",
+      "inStock": "In stock",
+      "onOffer": "On offer",
+      "featured": "Featured",
+      "browse": "Browse products",
+      "noProducts": "No products match these filters.",
+      "noProductsDescription": "Try removing filters or explore the shop.",
+      "countPattern": "{n} products"
+    },
+    "account": {
+      "title": "Account",
+      "name": "Name",
+      "email": "Email",
+      "logout": "Logout",
+      "notLoggedIn": "You are not logged in.",
+      "login": "Login",
+      "register": "Register",
+      "orders": "My orders",
+      "wishlist": "My wishlist"
+    },
+    "wishlist": {
+      "title": "My wishlist",
+      "empty": "No wishlist items yet.",
+      "browse": "Browse products"
+    },
+    "cart": {
+      "title": "Your cart",
+      "subtitle": "Review items before checkout.",
+      "empty": "Your cart is empty.",
+      "browse": "Browse products",
+      "unit": "Unit",
+      "updating": "Updating…",
+      "total": "Total",
+      "checkout": "Checkout"
+    },
+    "orders": {
+      "title": "My orders",
+      "empty": "No orders yet.",
+      "emptyDescription": "Check here for your order history.",
+      "searchTitle": "Search orders",
+      "searchHeading": "Find orders by phone",
+      "searchDescription": "Search orders by exact phone number to find matching order history.",
+      "orderNumberPlaceholder": "Enter phone number",
+      "search": "Search",
+      "clear": "Clear",
+      "checking": "Checking...",
+      "enterOrderNumber": "Enter a phone number to search orders.",
+      "noOrdersFound": "No orders found.",
+      "noOrdersMatch": "No orders match that phone number."
+    },
+    "checkout": {
+      "title": "Checkout",
+      "subtitle": "Complete your shipping details, choose your governorate, and continue to Stripe.",
+      "empty": "Cart is empty.",
+      "browse": "Browse products",
+      "fullName": "Full Name",
+      "phone": "Phone",
+      "line1": "Address Line 1",
+      "line2": "Address Line 2 (optional)",
+      "city": "City",
+      "state": "State (optional)",
+      "country": "Country",
+      "postalCode": "Postal Code (optional)",
+      "governorate": "Governorate",
+      "selectGovernorate": "Select governorate",
+      "coupon": "Coupon (optional)",
+      "subtotal": "Subtotal",
+      "delivery": "Delivery",
+      "total": "Total",
+      "taxIncludedShort": "(Included)",
+      "taxIncludedNote": "Tax is included in the total amount.",
+      "redirecting": "Redirecting...",
+      "payWithStripe": "Pay with Stripe"
+    },
+    "trackOrder": {
+      "title": "Track order",
+      "subtitle": "Enter your order number to view the latest status.",
+      "orderNumberPlaceholder": "Order number",
+      "trackButton": "Track order",
+      "checking": "Checking..."
+    },
+    "team": {
+      "empty": "No team members yet.",
+      "emptyDescription": "Invite users to manage orders and products.",
+      "create": "Invite teammate"
+    },
+    "products": {
+      "empty": "No products yet.",
+      "emptyDescription": "Try removing the search or reload the page.",
+      "create": "Create product"
+    },
+    "productDetail": {
+      "notFound": "Product not found",
+      "backToShop": "Shop",
+      "reviewsTitle": "Customer reviews",
+      "reviewsSubtitle": "Published reviews from shoppers. New submissions are moderated before they appear here.",
+      "noReviews": "No reviews yet — be the first to share your thoughts.",
+      "signIn": "Sign in",
+      "signInToReview": "to write a review.",
+      "writeReview": "Write your review",
+      "reviewHelp": "Signed-in customers can submit a rating and comments. Your review will show here after approval.",
+      "rating": "Rating",
+      "starsSuffix": "stars",
+      "comments": "Comments",
+      "reviewPlaceholder": "Share your experience…",
+      "invalidProductId": "Invalid product id.",
+      "reviewPending": "Thanks — your review will appear after moderation.",
+      "sending": "Sending…",
+      "submitReview": "Submit review",
+      "checkingSession": "Checking session…",
+      "inStockCount": "{n} in stock",
+      "outOfStock": "Out of stock",
+      "stockLimit": "You only have {n} in stock.",
+      "relatedProducts": "Related products",
+      "description": "Description"
+    },
+    "about": {
+      "v1Title": "Elegance",
+      "v2Title": "Comfort",
+      "v3Title": "Inclusivity",
+      "v4Title": "Quality",
+      "v5Title": "Community",
+      "v6Title": "Identity",
+
+      "v1Desc": "Bold aesthetics and clean details for every season.",
+      "v2Desc": "Pieces designed to fit seamlessly into daily life.",
+      "v3Desc": "Sizes from S to 6XL — made for everyone.",
+      "v4Desc": "Attention to every detail to meet the highest standards.",
+      "v5Desc": "We've built a community connected by shared love for style.",
+      "v6Desc": "Clothing that reflects your personality and builds confidence.",
+
+      "p1Label": "01",
+      "p2Label": "02",
+      "p3Label": "03",
+      "p4Label": "04",
+      "p5Label": "05",
+      "p6Label": "06",
+
+      "heroEyebrow": "About Us",
+      "heroTitle1": "Our",
+      "heroTitle2": "Story",
+      "heroTitle3": "Starts Here",
+      "heroSubtitle": "Fashion & accessories designed for everyone",
+      "philosophyLabel": "Philosophy",
+      "philosophyHeading1": "Simplicity is the",
+      "philosophyHeadingEm": "strongest",
+      "philosophyHeading2": "form of style",
+      "philosophyBody": "Our story started with a simple idea: Clothing should be more than something you wear every day — it should reflect personality, inspire confidence, and stay effortlessly simple.",
+
+      "definesHeading1": "What",
+      "definesHeadingEm": "defines us",
+      "definesBody": "We believe simplicity is the strongest form of style. That's why we create pieces that combine bold aesthetics, clean details, and everyday comfort. Every product we design carries a clear purpose: to feel easy to wear, meaningful, and naturally part of daily life.",
+
+      "quote": "This story is only getting started… Everyone who wears our products becomes part of it.",
+      "collectionHeading1": "Our",
+      "collectionHeadingEm": "Collection",
+      "collectionTagline": "T-Shirts · Everyday Wear · Bags · Caps",
+
+      "visionLabel": "Our Vision",
+      "visionHeading1": "From a small idea",
+      "visionHeading2": "to a brand built",
+      "visionHeading3": "for",
+      "visionHeadingEm": "everyone",
+      "visionBody": "Over time, our vision grew from a small idea into a brand focused on creating fashion and accessories for everyone. By focusing on quality, visual identity, and customer trust, we've built more than a brand — we've built a community connected by a shared love for clean and timeless style.",
+      "visionCta": "Shop the Collection",
+      "sizesLabel": "All Sizes"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Get in Touch",
+      "subtitle": "We respond via WhatsApp the same day.",
+      "formHeading": "Send a Message",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us how we can help…",
+      "send": "Send Message",
+      "subject": "Message from website",
+      "infoHeading": "Contact Information",
+      "whatsapp": "+971 55 910 5899",
+      "whatsappLabel": "WhatsApp",
+      "email": "sudanistaa@gmail.com",
+      "emailInfoLabel": "Email",
+      "location": "Dubai, United Arab Emirates",
+      "locationLabel": "Location",
+      "instagramLabel": "Instagram",
+      "instagram": "sudanistaa",
+      "tiktokLabel": "TikTok",
+      "tiktok": "sudanistaa",
+      "hoursLabel": "Working Hours",
+      "hours": "Saturday – Thursday, 10 AM – 9 PM",
+      "responseLabel": "Response Time",
+      "response": "Same day via WhatsApp"
+    },
+    "offers": {
+      "badge": "Offer",
+      "discountPrefix": "Discount"
+    },
+    "policies": {
+      "refundPolicy": {
+        "label": "Policy",
+        "title": "Refund Policy",
+        "lastUpdated": "Effective immediately",
+        "sections": [
+          {
+            "heading": "When We Accept Returns",
+            "body": "Returns are accepted exclusively in the following cases: a defect in the product, or an error in sizing made on our part. Outside of these two conditions, returns will not be accepted."
+          },
+          {
+            "heading": "Reporting Window",
+            "body": "Any issue must be reported within 48 hours of receiving your order, accompanied by a clear photo documenting the problem."
+          },
+          {
+            "heading": "Resolution",
+            "body": "Upon approval of a return request, we will offer either an exchange for the correct item or store credit — whichever you prefer."
+          },
+          {
+            "heading": "Non-Returnable Items",
+            "body": "Custom and personalised orders are final sale. They cannot be returned, exchanged, or refunded under any circumstances."
+          }
+        ]
+      },
+      "privacyPolicy": {
+        "label": "Policy",
+        "title": "Privacy Policy",
+        "lastUpdated": "Effective immediately",
+        "sections": [
+          {
+            "heading": "Data We Collect",
+            "body": "We collect only the information necessary to process your order: your name, phone number, delivery address, and order details. Nothing more."
+          },
+          {
+            "heading": "How We Use Your Data",
+            "body": "Your data is used solely to fulfil your order and provide customer support. We do not sell, share, or transfer your personal information to any third party."
+          },
+          {
+            "heading": "Communication",
+            "body": "All communication takes place via WhatsApp for the purpose of order coordination and support only."
+          },
+          {
+            "heading": "Payment Security",
+            "body": "We do not store any payment data. All transactions are processed securely through the payment provider."
+          },
+          {
+            "heading": "Contact",
+            "body": "For any privacy-related enquiries, please contact us at sudanistaa@gmail.com."
+          }
+        ]
+      },
+      "shippingPolicy": {
+        "label": "Policy",
+        "title": "Shipping Policy",
+        "lastUpdated": "Effective immediately",
+        "sections": [
+          {
+            "heading": "Delivery Area",
+            "body": "We deliver within the United Arab Emirates only."
+          },
+          {
+            "heading": "Delivery Timeframe",
+            "body": "Orders are shipped within 24 hours of payment confirmation. Delivery across the UAE takes 1–3 working days, excluding Fridays and official public holidays."
+          },
+          {
+            "heading": "Shipping Fees",
+            "body": "Shipping fees are determined at the time of order confirmation and communicated to you before finalising your purchase."
+          },
+          {
+            "heading": "Tracking & Updates",
+            "body": "Shipping updates are sent directly via WhatsApp so you can follow your order every step of the way."
+          }
+        ]
+      },
+      "termsConditions": {
+        "label": "Legal",
+        "title": "Terms & Conditions",
+        "lastUpdated": "Effective immediately",
+        "sections": [
+          {
+            "heading": "Order Confirmation",
+            "body": "Orders are confirmed only after payment has been completed successfully. Confirmation is not issued prior to payment."
+          },
+          {
+            "heading": "Pricing",
+            "body": "All prices are listed in UAE Dirhams (AED). Prices are subject to change without prior notice."
+          },
+          {
+            "heading": "Customer Responsibility",
+            "body": "The customer is responsible for the accuracy of all information provided at the time of ordering, including name, address, and contact details."
+          },
+          {
+            "heading": "Out-of-Stock Orders",
+            "body": "In the rare event that an ordered item is out of stock, the order will be cancelled and a full refund will be issued."
+          },
+          {
+            "heading": "Custom Orders",
+            "body": "Personalised and custom orders cannot be cancelled or returned once confirmed. Please review all details carefully before confirming."
+          },
+          {
+            "heading": "Changes to Terms",
+            "body": "We reserve the right to update or modify these terms at any time. Continued use of our store constitutes acceptance of the updated terms."
+          }
+        ]
+      }
+    },
+    "checkoutSuccess": {
+      "title": "Thank you for your order!",
+      "subtitle": "Your order has been received successfully. We will start preparing it soon.",
+      "orderDetails": "Order details",
+      "continueShopping": "Continue shopping",
+      "paymentFailed": "Payment failed",
+      "paymentPending": "Confirming payment...",
+      "myOrders": "My orders"
+    },
+    "options": {
+      "empty": "No options yet.",
+      "emptyDescription": "Create options to offer different variations of your product.",
+      "create": "Create option"
+    },
+    "reviews": {
+      "empty": "No reviews yet.",
+      "emptyDescription": "Be the first to share your thoughts on this product.",
+      "create": "Write a review"
+    },
+    "shipping": {
+      "empty": "No shipping options yet.",
+      "emptyDescription": "Create shipping options to define delivery methods and fees.",
+      "create": "Create shipping option"
+    },
+    "stock": {
+      "empty": "No stock locations yet.",
+      "emptyDescription": "Create stock locations to manage inventory across different places.",
+      "create": "Create stock location"
+    },
+    "currencies": {
+      "empty": "No currencies yet.",
+      "emptyDescription": "Create currencies to set prices in different currencies.",
+      "create": "Create currency"
+    },
+    "customers": {
+      "empty": "No customers yet.",
+      "emptyDescription": "Customers will appear here after they place an order.",
+      "create": "Create customer"
+    },
+    "collections": {
+      "empty": "No collections yet.",
+      "emptyDescription": "Create curated groups to showcase your favorite products.",
+      "create": "Create collection"
+    },
+    "categories": {
+      "empty": "No categories yet.",
+      "emptyDescription": "Create categories to organize your collection.",
+      "create": "Create category"
+    }
+  },
+  "home": {
+    "showMore": "Show more",
+    "featuredTitle": "Featured Products",
+    "browse": "Browse products",
+    "featuredEmpty": "No featured products yet",
+    "featuredEmptyDescription": "Check back soon for the latest new arrivals.",
+    "ctaTitleLine1": "Crafted for those who value",
+    "ctaTitleHighlight1": "elegance",
+    "ctaTitleSeparator": ",",
+    "ctaTitleHighlight2": "authenticity",
+    "ctaTitleLine2": "& timeless style",
+    "ctaDescription": "Every piece is selected with precision - designed to feel luxurious, look premium, and last beyond seasons.",
+    "ctaBadge1": "Authentic",
+    "ctaBadge2": "Premium Materials",
+    "ctaBadge3": "Luxury Design",
+    "ctaPrimary": "Shop Collection",
+    "ctaSecondary": "Explore Story"
+  },
+  "errors": {
+    "requestFailed": "Request failed",
+    "unexpected": "Unexpected error",
+    "invalidCredentials": "Invalid credentials",
+    "unauthorized": "Unauthorized",
+    "invalidToken": "Invalid or expired code"
+  },
+  "sections": {
+    "faq": {
+      "label": "FAQ",
+      "title": "Questions & Answers",
+      "items": [
+        {
+          "q": "What products do you offer?",
+          "a": "We offer everyday clothing for children, as well as accessories — everything your little ones need for daily wear."
+        },
+        {
+          "q": "What sizes are available?",
+          "a": "Our sizing runs from S all the way up to 6XL, so we cater to a wide range of body types and ages."
+        },
+        {
+          "q": "How do I place an order?",
+          "a": "Orders are placed directly through our online store. Simply browse, add to cart, and check out in a few easy steps."
+        },
+        {
+          "q": "How long does delivery take?",
+          "a": "Delivery typically takes 1–3 days, depending on your location and the shipping option selected at checkout."
+        },
+        {
+          "q": "Are custom orders available?",
+          "a": "Custom orders are available. Please note that customised items are final sale and cannot be returned or exchanged."
+        },
+        {
+          "q": "What payment methods do you accept?",
+          "a": "We accept Visa, Apple Pay, and Google Pay — all processed securely through our website."
+        },
+        {
+          "q": "Do you offer international shipping?",
+          "a": "Yes, international shipping is available. Please reach out via our WhatsApp number to coordinate your order."
+        }
+      ]
+    },
+    "footer": {
+      "description": "Everyday clothing for children, crafted with care. Sizes S to 6XL, delivered across the UAE.",
+      "email": "sudanistaa@gmail.com",
+      "phone": "+971 55 910 5899",
+      "location": "Dubai, United Arab Emirates",
+      "rights": "All rights reserved.",
+      "navigationLabel": "Navigation",
+      "customerLabel": "Customer",
+      "contactLabel": "Contact",
+      "emailLabel": "Email",
+      "phoneLabel": "WhatsApp",
+      "locationLabel": "Location",
+      "privacyLabel": "Privacy Policy",
+      "termsLabel": "Terms & Conditions",
+      "refundLabel": "Refund Policy",
+      "shippingLabel": "Shipping Policy",
+      "myOrdersLabel": "My Orders",
+      "wishlistLabel": "Wishlist",
+      "trackOrderLabel": "Track Order",
+      "accountLabel": "Account"
+    },
+    "collections": {
+      "title": "Collections",
+      "empty": "No collections yet.",
+      "emptyDescription": "Create curated groups to showcase your favorite products.",
+      "browse": "Browse products"
+    },
+    "categories": {
+      "title": "Categories",
+      "empty": "No categories yet.",
+      "emptyDescription": "Create categories to organize your collection.",
+      "browse": "Browse products"
+    },
+    "lookbooks": {
+      "title": "Lookbooks",
+      "empty": "No lookbooks yet.",
+      "emptyDescription": "Add styled edits to inspire customers.",
+      "browse": "Browse products",
+      "subtitle": "Visual narratives designed to inspire discovery",
+      "all": "All edits",
+      "viewAll": "View all"
+    },
+    "trust": {
+      "title": "Our Promise",
+      "point": [
+        {
+          "title": "100% Authentic",
+          "desc": "Original pieces sourced with verified quality."
+        },
+        {
+          "title": "Luxury Materials",
+          "desc": "Premium fabrics crafted for lasting elegance."
+        },
+        {
+          "title": "All-Day Comfort",
+          "desc": "Designed for confidence and ease of movement."
+        },
+        {
+          "title": "Fast Delivery",
+          "desc": "Quick shipping with secure, discreet packaging."
+        }
+      ]
+    }
+  }
+}
