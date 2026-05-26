@@ -98,7 +98,7 @@ export default function AccountOrdersPage() {
             </Card>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

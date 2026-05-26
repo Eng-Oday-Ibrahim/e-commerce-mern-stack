@@ -1,4 +1,3 @@
-# ---------- BUILD STAGE ----------
 # How to build the image:
 # 1. Navigate to the server directory in your terminal.
 # 2. Run the following command to build the Docker image:
@@ -28,4 +27,5 @@ RUN npm ci --omit=dev
 COPY --from=builder /server/dist ./dist
 
 EXPOSE 4000
-CMD ["node", "dist/src/server.js"]
+CMD ["node", "dist/server.js"]
+

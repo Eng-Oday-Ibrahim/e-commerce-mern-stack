@@ -111,7 +111,8 @@
       "checking": "Checking...",
       "enterOrderNumber": "Enter a phone number to search orders.",
       "noOrdersFound": "No orders found.",
-      "noOrdersMatch": "No orders match that phone number."
+      "noOrdersMatch": "No orders match that phone number.",
+      "instructions": "To place an order, simply browse our shop and add items to your cart. Once you complete checkout, your order will appear here for easy tracking and reference."
     },
     "checkout": {
       "title": "Checkout",
