@@ -31,18 +31,13 @@ export default function Header() {
 
   const { lang, setLang, m } = useI18n();
 
-  // Mount on client only
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
-  // Cart sync
   useEffect(() => {
     setCartCount(getCartCount(readCart()));
     return onCartChanged(() => setCartCount(getCartCount(readCart())));
   }, []);
 
-  // Customer initial
   useEffect(() => {
     let cancelled = false;
     CustomerApi.me()
@@ -51,15 +46,10 @@ export default function Header() {
         const initial = email ? email[0].toUpperCase() : null;
         if (!cancelled) setCustomerInitial(initial);
       })
-      .catch(() => {
-        if (!cancelled) setCustomerInitial(null);
-      });
-    return () => {
-      cancelled = true;
-    };
+      .catch(() => { if (!cancelled) setCustomerInitial(null); });
+    return () => { cancelled = true; };
   }, []);
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
@@ -72,39 +62,24 @@ export default function Header() {
         setLangOpen(false);
       }
     };
-
-    if (langOpen) {
-      window.addEventListener("click", handleClickOutside);
-    }
-
+    if (langOpen) window.addEventListener("click", handleClickOutside);
     return () => window.removeEventListener("click", handleClickOutside);
   }, [langOpen]);
 
-  // Prevent body scroll when drawer open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Drawer (Portal) - only render on client
   const drawer = mounted
     ? createPortal(
         <div
           className={`fixed inset-0 z-[999] transition-all duration-300 ${
-            open
-              ? "visible opacity-100"
-              : "invisible opacity-0 pointer-events-none"
+            open ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
           }`}
         >
-          {/* Backdrop */}
-          <div
-            onClick={() => setOpen(false)}
-            className="absolute inset-0 bg-black/70"
-          />
+          <div onClick={() => setOpen(false)} className="absolute inset-0 bg-black/70" />
 
-          {/* Panel */}
           <div
             className={`absolute right-0 top-0 h-full w-[84%] max-w-sm bg-deep-black p-6 transition-transform duration-300 ${
               open ? "translate-x-0" : "translate-x-full"
@@ -129,45 +104,9 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-            {/* Mobile Language Switcher */}
-            <div
-              ref={mobileLangRef}
-              className="mt-8 border-t border-white/10 pt-6"
-            >
-              <div className="flex gap-3">
-                <button
-                  onClick={() => {
-                    setLang("en");
-                    setLangOpen(false);
-                  }}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm ${
-                    lang === "en"
-                      ? "bg-white/20 text-white"
-                      : "text-white/60 hover:text-white"
-                  }`}
-                >
-                  <span className="fi fi-gb"></span>
-                  English
-                </button>
-                <button
-                  onClick={() => {
-                    setLang("ar");
-                    setLangOpen(false);
-                  }}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm ${
-                    lang === "ar"
-                      ? "bg-white/20 text-white"
-                      : "text-white/60 hover:text-white"
-                  }`}
-                >
-                  <span className="fi fi-sa"></span>
-                  العربية
-                </button>
-              </div>
-            </div>
           </div>
         </div>,
-        document.body,
+        document.body
       )
     : null;
 
@@ -179,8 +118,9 @@ export default function Header() {
         </div>
 
         <div className="mx-auto flex h-18 items-center justify-between px-4 sm:px-6 lg:px-10">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+
+          {/* ── LOGO (both) ── */}
+          <Link href="/" className="flex items-center lg:flex">
             <Image
               src="/images/logo.png"
               alt="SUDANISTA Logo"
@@ -191,7 +131,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* ── DESKTOP NAV ── */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((item) => (
               <Link
@@ -204,53 +144,34 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop Right */}
+          {/* ── DESKTOP RIGHT ── */}
           <div className="hidden lg:flex items-center gap-5">
             {/* Language */}
             <div ref={langRef} className="relative">
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLangOpen((prev) => !prev);
-                }}
+                onClick={(e) => { e.stopPropagation(); setLangOpen((prev) => !prev); }}
                 className="flex items-center gap-2 border-b border-black/10 px-2 py-1"
               >
-                <span
-                  className={lang === "en" ? "fi fi-gb" : "fi fi-sa"}
-                ></span>
-                <ChevronDown
-                  size={14}
-                  className={`transition ${langOpen ? "rotate-180" : ""}`}
-                />
+                <span className={lang === "en" ? "fi fi-gb" : "fi fi-sa"}></span>
+                <ChevronDown size={14} className={`transition ${langOpen ? "rotate-180" : ""}`} />
               </button>
 
               <div
                 className={`absolute right-0 mt-2 w-32 rounded-md border border-black/10 bg-white shadow-md z-[999] overflow-hidden transition-all duration-200 ${
-                  langOpen
-                    ? "opacity-100 translate-y-0 visible"
-                    : "opacity-0 -translate-y-2 invisible"
+                  langOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
                 }`}
               >
                 <button
-                  onClick={() => {
-                    setLang("en");
-                    setLangOpen(false);
-                  }}
+                  onClick={() => { setLang("en"); setLangOpen(false); }}
                   className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100"
                 >
-                  <span className="fi fi-gb"></span>
-                  English
+                  <span className="fi fi-gb"></span> English
                 </button>
-
                 <button
-                  onClick={() => {
-                    setLang("ar");
-                    setLangOpen(false);
-                  }}
+                  onClick={() => { setLang("ar"); setLangOpen(false); }}
                   className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100"
                 >
-                  <span className="fi fi-sa"></span>
-                  العربية
+                  <span className="fi fi-sa"></span> العربية
                 </button>
               </div>
             </div>
@@ -266,15 +187,10 @@ export default function Header() {
             </Link>
 
             {/* Wishlist */}
-            <Link href="/wishlist">
-              <Heart size={20} />
-            </Link>
+            <Link href="/wishlist"><Heart size={20} /></Link>
 
             {/* Account */}
-            <Link
-              href="/account"
-              className="text-white bg-gradient-to-br from-gold-dark via-gold to-gold-light p-1"
-            >
+            <Link href="/account" className="text-white bg-gradient-to-br from-gold-dark via-gold to-gold-light p-1">
               {customerInitial ? (
                 <span className="inline-flex h-6 w-6 items-center justify-center text-xs font-semibold">
                   {customerInitial}
@@ -285,7 +201,53 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile */}
+          {/* ── MOBILE LAYOUT ── */}
+          {/* Left: Lang + User */}
+          <div className="flex items-center gap-3 lg:hidden order-first">
+
+            {/* Language */}
+            <div ref={mobileLangRef} className="relative">
+              <button
+                onClick={(e) => { e.stopPropagation(); setLangOpen((prev) => !prev); }}
+                className="flex items-center gap-1"
+              >
+                <span className={lang === "en" ? "fi fi-gb" : "fi fi-sa"}></span>
+                <ChevronDown size={12} className={`transition ${langOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <div
+                className={`absolute left-0 mt-2 w-32 rounded-md border border-black/10 bg-white shadow-md z-[999] overflow-hidden transition-all duration-200 ${
+                  langOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+                }`}
+              >
+                <button
+                  onClick={() => { setLang("en"); setLangOpen(false); }}
+                  className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 text-sm"
+                >
+                  <span className="fi fi-gb"></span> English
+                </button>
+                <button
+                  onClick={() => { setLang("ar"); setLangOpen(false); }}
+                  className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 text-sm"
+                >
+                  <span className="fi fi-sa"></span> العربية
+                </button>
+              </div>
+            </div>
+
+            {/* Account */}
+            <Link href="/account" className="text-white bg-gradient-to-br from-gold-dark via-gold to-gold-light p-1">
+              {customerInitial ? (
+                <span className="inline-flex h-5 w-5 items-center justify-center text-xs font-semibold">
+                  {customerInitial}
+                </span>
+              ) : (
+                <User size={18} />
+              )}
+            </Link>
+          </div>
+
+          {/* Right: Cart + Heart + Menu */}
           <div className="flex items-center gap-3 lg:hidden">
             <Link href="/cart" className="relative">
               <ShoppingBag size={20} />
@@ -296,14 +258,13 @@ export default function Header() {
               )}
             </Link>
 
-            <Link href="/wishlist">
-              <Heart size={20} />
-            </Link>
+            <Link href="/wishlist"><Heart size={20} /></Link>
 
             <button onClick={() => setOpen(true)}>
               <Menu size={24} />
             </button>
           </div>
+
         </div>
       </header>
 
