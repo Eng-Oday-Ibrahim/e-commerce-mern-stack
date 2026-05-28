@@ -215,11 +215,13 @@ export default function Header() {
                 <ChevronDown size={12} className={`transition ${langOpen ? "rotate-180" : ""}`} />
               </button>
 
-              <div
-                className={`absolute left-0 mt-2 w-32 rounded-md border border-black/10 bg-white shadow-md z-[999] overflow-hidden transition-all duration-200 ${
-                  langOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
-                }`}
-              >
+<div
+  dir="ltr"
+  className={`absolute left-0 mt-2 w-32 rounded-md border border-black/10 bg-white shadow-md z-[999] overflow-hidden transition-all duration-200 ${
+    langOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+  }`}
+>
+
                 <button
                   onClick={() => { setLang("en"); setLangOpen(false); }}
                   className="flex items-center gap-2 w-full px-3 py-2 hover:bg-gray-100 text-sm"
