@@ -89,57 +89,87 @@ export default function Header() {
   }, [open]);
 
   // Drawer (Portal) - only render on client
-  const drawer =
-    mounted
-      ? createPortal(
+  const drawer = mounted
+    ? createPortal(
+        <div
+          className={`fixed inset-0 z-[999] transition-all duration-300 ${
+            open
+              ? "visible opacity-100"
+              : "invisible opacity-0 pointer-events-none"
+          }`}
+        >
+          {/* Backdrop */}
           <div
-            className={`fixed inset-0 z-[999] transition-all duration-300 ${
-              open
-                ? "visible opacity-100"
-                : "invisible opacity-0 pointer-events-none"
+            onClick={() => setOpen(false)}
+            className="absolute inset-0 bg-black/70"
+          />
+
+          {/* Panel */}
+          <div
+            className={`absolute right-0 top-0 h-full w-[84%] max-w-sm bg-deep-black p-6 transition-transform duration-300 ${
+              open ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            {/* Backdrop */}
-            <div
-              onClick={() => setOpen(false)}
-              className="absolute inset-0 bg-black/70"
-            />
+            <div className="flex justify-between mb-6">
+              <Image src="/images/logo.png" alt="logo" width={35} height={35} />
+              <button onClick={() => setOpen(false)}>
+                <X size={24} className="text-white" />
+              </button>
+            </div>
 
-            {/* Panel */}
+            <nav className="flex flex-col gap-6">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="text-white/80"
+                >
+                  {m.nav[item.key]}
+                </Link>
+              ))}
+            </nav>
+            {/* Mobile Language Switcher */}
             <div
-              className={`absolute right-0 top-0 h-full w-[84%] max-w-sm bg-deep-black p-6 transition-transform duration-300 ${
-                open ? "translate-x-0" : "translate-x-full"
-              }`}
+              ref={mobileLangRef}
+              className="mt-8 border-t border-white/10 pt-6"
             >
-              <div className="flex justify-between mb-6">
-                <Image
-                  src="/images/logo.png"
-                  alt="logo"
-                  width={35}
-                  height={35}
-                />
-                <button onClick={() => setOpen(false)}>
-                  <X size={24} className="text-white" />
+              <div className="flex gap-3">
+                <button
+                  onClick={() => {
+                    setLang("en");
+                    setLangOpen(false);
+                  }}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm ${
+                    lang === "en"
+                      ? "bg-white/20 text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  <span className="fi fi-gb"></span>
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    setLang("ar");
+                    setLangOpen(false);
+                  }}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm ${
+                    lang === "ar"
+                      ? "bg-white/20 text-white"
+                      : "text-white/60 hover:text-white"
+                  }`}
+                >
+                  <span className="fi fi-sa"></span>
+                  العربية
                 </button>
               </div>
-
-              <nav className="flex flex-col gap-6">
-                {navLinks.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="text-white/80"
-                  >
-                    {m.nav[item.key]}
-                  </Link>
-                ))}
-              </nav>
             </div>
-          </div>,
-          document.body
-        )
-      : null;
+          </div>
+        </div>,
+        document.body,
+      )
+    : null;
 
   return (
     <>
@@ -185,7 +215,9 @@ export default function Header() {
                 }}
                 className="flex items-center gap-2 border-b border-black/10 px-2 py-1"
               >
-                <span className={lang === "en" ? "fi fi-gb" : "fi fi-sa"}></span>
+                <span
+                  className={lang === "en" ? "fi fi-gb" : "fi fi-sa"}
+                ></span>
                 <ChevronDown
                   size={14}
                   className={`transition ${langOpen ? "rotate-180" : ""}`}
