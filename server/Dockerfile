@@ -1,31 +1,34 @@
-# How to build the image:
-# 1. Navigate to the server directory in your terminal.
-# 2. Run the following command to build the Docker image:
-#    docker build -t sass-store-server .
-
 FROM node:20-alpine AS builder
-WORKDIR /server
 
-# Install dev deps and build
+WORKDIR /app
+
+# install dependencies
 COPY package*.json ./
 RUN npm ci
 
+# copy source
 COPY tsconfig.json ./
 COPY src ./src
 
+# build
 RUN npm run build
 
+
 FROM node:20-alpine AS runner
-WORKDIR /server
+
+WORKDIR /app
 ENV NODE_ENV=production
 
-# Install production deps
+# install only production deps
 COPY package*.json ./
 RUN npm ci --omit=dev
 
-# Copy built files
-COPY --from=builder /server/dist ./dist
+# copy build
+COPY --from=builder /app/dist ./dist
+
+# if you have uploads or config files
+# COPY --from=builder /app/public ./public
 
 EXPOSE 4000
-CMD ["node", "dist/server.js"]
 
+CMD ["node", "dist/server.js"]
