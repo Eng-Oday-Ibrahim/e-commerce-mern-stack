@@ -33,7 +33,9 @@ services:
       - DATABASE_URL=mongodb://root:${MONGO_PASSWORD}@db:27017/sudanista?authSource=admin
       - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
       - RABBITMQ_URL=amqp://admin:${RABBITMQ_PASSWORD}@rabbitmq:5672
-
+      - STORAGE_PATH=/server/storage
+    volumes:
+      - /var/www/sudanista/storage:/server/storage
   db:
     image: mongo:7
     container_name: sudanista-mongodb

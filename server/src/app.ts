@@ -26,7 +26,10 @@ app.post('/api/payments/webhook/stripe', express.raw({ type: 'application/json' 
 app.use(express.json({ limit: '10mb' }));
 
 // Serve uploaded files
-app.use('/storage', express.static(path.join(process.cwd(), 'storage'),  {
+const storagePath = process.env.STORAGE_PATH || path.join(process.cwd(), 'storage');
+app.use(
+  '/storage',
+  express.static(storagePath, {
     setHeaders: (res) => {
       res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
